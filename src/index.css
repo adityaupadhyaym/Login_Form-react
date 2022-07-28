@@ -1,3 +1,10 @@
+@import './utils/btn.css';
+@import './utils/error.css';
+@import './utils/input.css';
+@import './utils/label.css';
+@import './utils/text.css';
+
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.login {
+.container {
   width: 350px;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 40px 50px;
@@ -23,3 +30,34 @@ body {
   border-radius: 5px;
 
 }
+
+form {
+  width: 250px;
+
+}
+form .form-control {
+  position: relative;
+
+}
+
+
+form .form-control #email:focus {
+  outline: none;
+  border-bottom-color: lightblue
+}
+/* sir.... I had used both techniques for input animation... But no results.  */
+
+/* .login form .form-control #email:focus + .login form .form-control #email-label {
+  transform: translateY(-30px);
+  color: red;
+} */
+
+/* form .form-control input:focus~ label,
+input:not(:placeholder-shown)input:not(:focus)~label {
+  left: 0.7rem;
+  top: -0.5rem;
+ 
+} */
+
+
+

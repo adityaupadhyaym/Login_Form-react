@@ -1,13 +1,12 @@
 import React from 'react';
 import { Formik } from 'formik';
-import Input from '../Input';
 import './style.css';
-import '../../utils/text.css';
+
 
 const LogIn = () => {
 
   return (
-    <div className="">
+    <div className='login'>
       <h2 className='text-center'> Please Login</h2>
       <Formik
         initialValues={{ email: '', password: '' }}
@@ -20,13 +19,25 @@ const LogIn = () => {
           ) {
             errors.email = 'Invalid email address';
           }
+
+          
           if (!values.password) {
             errors.password = 'Password is required !';
-          } else if (values.password.length < 6 ) {
-            errors.password = "Password can't be less than 6";
-          } else if (values.password.length > 15) {
-            errors.password = "Password can't be more than 15"
-          }
+          } else if (values.password.length < 8 ) {
+            errors.password = "Password can't be less than 8";
+          } else if (values.password.length > 32) {
+            errors.password = "Password can't be more than 32"
+          }  else if (values.password.search(/[a-z]/) < 0)  {
+            errors.password = "Please include at least a lowercase letter !"
+          }  else if (values.password.search(/[A-Z]/) < 0)  {
+            errors.password = "Please include at least an Uppercase letter !"
+          } else if (values.password.search(/[!@#\$%\^&\*_]/) < 0)  {
+            errors.password = "Please include at least a special letter !"
+          }  else if (values.password.search(/[0-9]/) < 0) {
+            errors.password = "Please include at least a number !"
+          }  
+
+
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -47,8 +58,8 @@ const LogIn = () => {
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit}>
-            <div className='emailHolder form-control'>
-              <label htmlFor='email' id='email-label'> Email </label>
+            <div className='form-control'>
+              <label htmlFor='email' className='label'> Email </label>
             <input
               id="email"
               placeholder=' '
@@ -58,11 +69,11 @@ const LogIn = () => {
               onBlur={handleBlur}
               value={values.email}
             />
-            {errors.email && touched.email && <small> {errors.email}</small>}
+            {errors.email && touched.email && <small className='error'> {errors.email}</small>}
             </div>
 
-          <div className='passwordHolder form-control'>
-            <label htmlFor='password' id='password-label'> Password</label>
+          <div className='form-control'>
+            <label htmlFor='password' className='label'> Password</label>
               <input
               id='password'
               placeholder=' '
@@ -73,15 +84,15 @@ const LogIn = () => {
               value={values.password}
             />
             </div>
-            {errors.password && touched.password && <small> {errors.password} </small>}
-            <button type="submit" disabled={isSubmitting} id="btn">
+            {errors.password && touched.password && <small className='error'> {errors.password} </small>}
+            <button type="submit" disabled={isSubmitting} class="btn">
               Login
             </button>
             
           </form>
         )}
       </Formik>
-      <Input />
+     
       
 
     </div>

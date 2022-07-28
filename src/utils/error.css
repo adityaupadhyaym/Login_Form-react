@@ -1,0 +1,8 @@
+.error {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    color: lightcoral;
+  }

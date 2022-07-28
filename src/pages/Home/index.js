@@ -6,16 +6,16 @@ import PageToggle from '../../components/PageToggle';
 
 
 const Home = () => {
-const [flag, setFlag] = useState(true);
-const pageHandler = () => {
-    setFlag(!flag);
-}
+    const [flag, setFlag] = useState(true);
+    const pageHandler = () => {
+        setFlag(!flag);
+    }
     return (
-        <div className='home login'>
-            {flag ? <LogIn/> :   <SignUp/>}
-                 
-        <PageToggle onClick= {pageHandler} flag = {flag}/>
-           
+        <div className='home container'>
+            {flag ? <LogIn /> : <SignUp />}
+
+            <PageToggle onClick={pageHandler} flag={flag} />
+
         </div>
     )
 }
