@@ -1,0 +1,86 @@
+
+
+.login form {
+    width: 250px;
+
+}
+
+.login form .form-control {
+    position: relative;
+
+}
+
+.login form .passwordHolder {
+    margin-top: 25px;
+}
+
+.login form .form-control label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.1rem;
+    color: #ffffff;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.login form .form-control input {
+    outline: none;
+    border: none;
+    display: block;
+    color: #fff;
+    padding: 10px 0px;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+
+}
+
+.login form .form-control #email:focus {
+    outline: none;
+    border-bottom-color: lightblue
+}
+
+/* .login form .form-control #email:focus + .login form .form-control #email-label {
+    transform: translateY(-30px);
+    color: red;
+} */
+.login form .form-control input:focus~ label,
+input:not(:placeholder-shown)input:not(:focus)~label {
+    left: 0.7rem;
+    top: -0.5rem;
+   
+}
+
+.login  small {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    color: lightcoral;
+}
+
+.login form #btn {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    background-color: lightblue;
+    border-radius: 5px;
+    padding: 10px 0px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.login form div {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.login form div p {
+    display: inline;
+}
+
+.login form div #register {
+    text-decoration: none;
+    color: lightblue;
+}

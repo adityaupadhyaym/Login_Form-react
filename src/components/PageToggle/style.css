@@ -1,0 +1,13 @@
+ .toggle {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.toggle p {
+    display: inline;
+}
+
+.toggle #register {
+    text-decoration: none;
+    color: lightblue;
+}
